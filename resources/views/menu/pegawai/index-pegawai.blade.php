@@ -72,7 +72,7 @@
 																<td>{{ $loop->iteration }}</td>
 																<td>{{ $row->user->name }} {{ $row->user->last_name }}</td>
 																<td>{{ $row->user->email }}</td>
-																<td>{{ $row->tipe }}</td>
+																<td>{{ $row->tipe}}</td>
 																<td>{{ $row->total_transaksi }}</td>
 																<td>{{ $row->min_transaksi }}</td>
 																<td>

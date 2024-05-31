@@ -25,6 +25,7 @@
             <tr>
               <th>No</th>
               <th>Tanggal</th>
+              <th>Tipe</th>
               <th>File</th>
               <th>created_at</th>
             </tr>
@@ -33,6 +34,7 @@
             <tr>
               <th>No</th>
               <th>Tanggal</th>
+              <th>Tipe</th>
               <th>File</th>
               <th>created_at</th>
             </tr>
@@ -42,6 +44,7 @@
               <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $row->tanggal }}</td>
+                <td>{{ $row->tipe }}</td>
                 <td><a href="{{ asset('storage/bukti_transfer/' . $row->bukti_transfer) }}"
                     target="_blank">{{ $row->bukti_transfer }}</a></td>
                 <td>{{ $row->created_at }}</td>

@@ -7,7 +7,7 @@
 
 		<!-- Topbar Search -->
 		<form class="d-none d-sm-inline-block form-inline ml-md-3 my-md-0 mw-100 navbar-search my-2 mr-auto">
-				<div class="input-group">
+				{{-- <div class="input-group">
 						<input type="text" class="form-control bg-light small border-0" placeholder="Search for..." aria-label="Search"
 								aria-describedby="basic-addon2">
 						<div class="input-group-append">
@@ -15,7 +15,7 @@
 										<i class="fas fa-search fa-sm"></i>
 								</button>
 						</div>
-				</div>
+				</div> --}}
 		</form>
 
 		<!-- Topbar Navbar -->
@@ -46,6 +46,7 @@
 				@if (auth()->user()->role != 'admin')
 						@php
 								$notifikasi = auth()->user()->notifikasi();
+
 						@endphp
 
 						<!-- Nav Item - Alerts -->
@@ -54,7 +55,7 @@
 										aria-haspopup="true" aria-expanded="false">
 										<i class="fas fa-bell fa-fw"></i>
 										<!-- Counter - Alerts -->
-										<span class="badge badge-danger badge-counter">{{ $notifikasi['count'] }}</span>
+										<span class="badge badge-danger badge-counter">{{ $notifikasi['count'] ?? 0 }}</span>
 								</a>
 								<!-- Dropdown - Alerts -->
 								<div class="dropdown-list dropdown-menu dropdown-menu-right animated--grow-in shadow"
@@ -63,15 +64,19 @@
 												Alerts Center
 										</h6>
 										<a class="dropdown-item d-flex align-items-center" href="#">
-												<div class="mr-3">
-														<div class="icon-circle bg-warning">
-																<i class="fas fa-exclamation-triangle text-white"></i>
+												@if ($notifikasi > 0)
+														<div class="mr-3">
+																<div class="icon-circle bg-warning">
+																		<i class="fas fa-exclamation-triangle text-white"></i>
+																</div>
 														</div>
-												</div>
-												<div>
-														<div class="small text-gray-500">{{ $notifikasi['date'] }}</div>
-														{{ $notifikasi['message'] }}
-												</div>
+														<div>
+																<div class="small text-gray-500">{{ $notifikasi['date'] }}</div>
+																{{ $notifikasi['message'] }}
+														</div>
+												@else
+														<p>tidak ada notifikasi</p>
+												@endif
 										</a>
 										<a class="dropdown-item small text-center text-gray-500" href="#">Show All Alerts</a>
 								</div>
@@ -111,5 +116,6 @@
 				</li>
 
 		</ul>
+		{{-- @dd($notifikasi) --}}
 
 </nav>

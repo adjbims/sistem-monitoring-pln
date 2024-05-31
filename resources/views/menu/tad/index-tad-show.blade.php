@@ -16,7 +16,7 @@
 						</div>
 
 						<!-- NIP -->
-						<div class="form-group" @if ($kelola_pegawai->tipe == 'tad') style="display: none;" @endif>
+						{{-- <div class="form-group" @if ($kelola_pegawai->tipe == 'tad') style="display: none;" @endif>
 								<label for="nip">NIP</label>
 								<p>{{ $kelola_pegawai->nip }}</p>
 						</div>
@@ -24,7 +24,7 @@
 						<div class="form-group" @if ($kelola_pegawai->tipe == 'mitra') style="display: none;" @endif>
 								<label for="nip">NIP</label>
 								<p>{{ $kelola_pegawai->nip }}</p>
-						</div>
+						</div> --}}
 
 						<!-- Name -->
 						<div class="form-group">
