@@ -44,7 +44,7 @@
               <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $row->tanggal }}</td>
-                <td>{{ $row->tipe }}</td>
+                <td>{{ $row->user->pegawai->tipe}}</td>
                 <td><a href="{{ asset('storage/bukti_transfer/' . $row->bukti_transfer) }}"
                     target="_blank">{{ $row->bukti_transfer }}</a></td>
                 <td>{{ $row->created_at }}</td>

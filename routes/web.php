@@ -44,5 +44,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/upload-transaksi', 'TransaksiController@store')->name('upload-transaksi.store');
 
         Route::get('/riwayat-transaksi', 'TransaksiController@riwayatIndex')->name('riwayat-transaksi.index');
+        Route::get('/rekap-transaksi', 'RekapTransaksiController@riwayatIndex')->name('rekap-transaksi.index');
     });
 });
