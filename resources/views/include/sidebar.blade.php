@@ -62,13 +62,6 @@
 								<span>{{ __('Data Transaksi') }}</span>
 						</a>
 				</li>
-
-				<li class="nav-item {{ Nav::isRoute('rekap-transaksi.index') }}">
-					<a class="nav-link" href="{{ route('rekap-transaksi.index') }}">
-							<i class="fas fa-money-bill-wave"></i>
-							<span>{{ __('Rekap Transaksi') }}</span>
-					</a>
-			</li>
 		@endif
 
 		@if (Auth::user()->role == 'pegawai')
