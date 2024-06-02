@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminMitraController;
 use App\Http\Controllers\AdminTadController;
+use App\Http\Controllers\DataRekapTransaksiController;
 use App\Http\Middleware\CheckRole;
 use App\Mail\TransaksiMail;
 use Illuminate\Support\Facades\Auth;
@@ -45,5 +46,6 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/riwayat-transaksi', 'TransaksiController@riwayatIndex')->name('riwayat-transaksi.index');
         Route::get('/rekap-transaksi', 'RekapTransaksiController@riwayatIndex')->name('rekap-transaksi.index');
+        Route::resource('/data-rekap-transaksi', DataRekapTransaksiController::class);
     });
 });
