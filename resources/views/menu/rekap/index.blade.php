@@ -79,8 +79,8 @@
 														<th>Tipe</th>
 														<th>Total Tansaksi</th>
 														<th>Minimal Transaksi</th>
+														<th>Status</th>
 														<th>created_at</th>
-														<th>Action</th>
 												</tr>
 										</thead>
 										<tfoot>
