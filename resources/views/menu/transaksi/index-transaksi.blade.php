@@ -35,7 +35,7 @@
 		<!-- DataTales Example -->
 		<div class="card mb-4 shadow">
 				<div class="card-header py-3">
-						<h6 class="font-weight-bold text-primary m-0">DataTables Example</h6>
+						<h6 class="font-weight-bold text-primary m-0"></h6>
 				</div>
 				<div class="card-body">
 						<div class="filter-container mb-3">
@@ -65,6 +65,11 @@
 																@endforeach
 														</div>
 												</div>
+										</div>
+								</div>
+								<div class="row">
+										<div class="col-12 col-md-auto">
+												<button type="button" id="resetFilter" class="btn btn-secondary">Reset</button>
 										</div>
 								</div>
 						</div>

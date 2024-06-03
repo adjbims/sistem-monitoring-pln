@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/kelola-tad', AdminTadController::class);
         Route::resource('/kelola-pegawai', 'PegawaiController');
         Route::resource('/data-transaksi', 'TransaksiController');
+        Route::resource('/data-rekap-transaksi', DataRekapTransaksiController::class);
     });
 
     Route::middleware([CheckRole::class . ':pegawai'])->group(function () {
@@ -46,6 +47,5 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/riwayat-transaksi', 'TransaksiController@riwayatIndex')->name('riwayat-transaksi.index');
         Route::get('/rekap-transaksi', 'RekapTransaksiController@riwayatIndex')->name('rekap-transaksi.index');
-        Route::resource('/data-rekap-transaksi', DataRekapTransaksiController::class);
     });
 });
