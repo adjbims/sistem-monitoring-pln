@@ -7,4 +7,12 @@ $(document).ready(function () {
     var regexPattern = tahun + '-' + (bulan < 10 ? '0' + bulan : bulan) + '-\\d\\d';
     table.column(4).search(regexPattern, true, false).draw();
   });
+
+  $('#resetFilter').click(function () {
+
+    $('input[name="tahun"][value="' + new Date().getFullYear() + '"]').prop('checked', true);
+    $('input[name="bulan"][value="' + (new Date().getMonth() + 1) + '"]').prop('checked', true);
+
+    table.column(4).search('').draw();
+  });
 });

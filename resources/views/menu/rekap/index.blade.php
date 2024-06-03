@@ -35,39 +35,10 @@
 		<!-- DataTales Example -->
 		<div class="card mb-4 shadow">
 				<div class="card-header py-3">
-						<h6 class="font-weight-bold text-primary m-0">DataTables Example</h6>
+						<h6 class="font-weight-bold text-primary m-0"></h6>
 				</div>
 				<div class="card-body">
-						<div class="filter-container mb-3">
-								<div class="row">
-										<div class="col-12">
-												<div class="form-group">
-														<label for="tahun">Tahun:</label>
-														<div class="btn-group btn-group-toggle" data-toggle="buttons">
-																@foreach (range(2023, date('Y')) as $year)
-																		<label class="btn btn-outline-primary {{ $year == date('Y') ? 'active' : '' }}">
-																				<input type="radio" name="tahun" value="{{ $year }}" autocomplete="off"
-																						{{ $year == date('Y') ? 'checked' : '' }}> {{ $year }}
-																		</label>
-																@endforeach
-														</div>
-												</div>
-										</div>
-										<div class="col-12">
-												<div class="form-group">
-														<label for="bulan">Bulan:</label>
-														<div class="btn-group btn-group-toggle" data-toggle="buttons">
-																@foreach (range(1, 12) as $month)
-																		<label class="btn btn-outline-primary {{ $month == date('n') ? 'active' : '' }}">
-																				<input type="radio" name="bulan" value="{{ $month }}" autocomplete="off"
-																						{{ $month == date('n') ? 'checked' : '' }}> {{ date('F', mktime(0, 0, 0, $month, 1)) }}
-																		</label>
-																@endforeach
-														</div>
-												</div>
-										</div>
-								</div>
-						</div>
+
 
 						<div class="table-responsive">
 								<table class="table-bordered table" id="dataTable" width="100%" cellspacing="0">
@@ -93,7 +64,6 @@
 														<th>Minimal Transaksi</th>
 														<th>Status</th>
 														<th>created_at</th>
-
 												</tr>
 										</tfoot>
 										<tbody>
