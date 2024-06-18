@@ -72,6 +72,14 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
         ]);
 
+        \App\Models\User::factory()->create([
+            'name' => 'Admin',
+            'last_name' => 'Satu',
+            'email' => 'admin2@admin.com',
+            'password' => 'admin22',
+            'role' => 'admin',
+        ]);
+
         // call
         $this->call(TransaksiSeeder::class);
     }
