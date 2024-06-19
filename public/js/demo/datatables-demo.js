@@ -9,10 +9,16 @@ $(document).ready(function () {
   });
 
   $('#resetFilter').click(function () {
-
     $('input[name="tahun"][value="' + new Date().getFullYear() + '"]').prop('checked', true);
     $('input[name="bulan"][value="' + (new Date().getMonth() + 1) + '"]').prop('checked', true);
-
     table.column(4).search('').draw();
+  });
+
+  $('#exportExcelBtn').click(function () {
+    var tahun = $('input[name="tahun"]:checked').val() || '';
+    var bulan = $('input[name="bulan"]:checked').val() || '';
+    // var exportUrl = "{{ route('data-transaksi.export.excel') }}/" + tahun + "/" + bulan;
+    var exportUrl = `data-transaksi/export/excel/${tahun}/${bulan}`;
+    $(this).attr('href', exportUrl);
   });
 });

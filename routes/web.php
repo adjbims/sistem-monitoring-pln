@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminMitraController;
 use App\Http\Controllers\AdminTadController;
 use App\Http\Controllers\DataRekapTransaksiController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Middleware\CheckRole;
 use App\Mail\TransaksiMail;
 use Illuminate\Support\Facades\Auth;
@@ -38,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/kelola-tad', AdminTadController::class);
         Route::resource('/kelola-pegawai', 'PegawaiController');
         Route::resource('/data-transaksi', 'TransaksiController');
+        Route::get('/data-transaksi/export/excel/{tahun?}/{bulan?}', [TransaksiController::class, 'exportExcel'])->name('data-transaksi.export.excel');
         Route::resource('/data-rekap-transaksi', DataRekapTransaksiController::class);
     });
 

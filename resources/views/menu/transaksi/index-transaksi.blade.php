@@ -126,6 +126,10 @@
 										</tbody>
 								</table>
 						</div>
+						<div class="">
+								<a href="#" id="exportExcelBtn" class="btn btn-primary">Export Excel</a>
+						</div>
+
 				</div>
 		</div>
 @endsection

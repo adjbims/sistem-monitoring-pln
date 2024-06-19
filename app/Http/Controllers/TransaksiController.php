@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExcelHistoryPembayaran;
 use App\Http\Requests\StoreTransaksiRequest;
 use App\Http\Requests\UpdateTransaksiRequest;
 use App\Models\Pegawai;
@@ -11,9 +12,28 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\TransaksiExport;
+use Maatwebsite\Excel\Excel as ExcelExcel;
 
 class TransaksiController extends Controller
 {
+
+    public function exportExcel($tahun = null, $bulan = null)
+    {
+        $query = Transaksi::query();
+
+        if ($tahun) {
+            $query->whereYear('tanggal', $tahun);
+        }
+
+        if ($bulan) {
+            $query->whereMonth('tanggal', $bulan);
+        }
+
+        $data = $query->get()->sortByDesc('created_at');
+
+        return Excel::download(new ExcelHistoryPembayaran($data), 'history_bukti_pembayaran.xlsx');
+    }
+
     /**
      * Display a listing of the resource.
      */
